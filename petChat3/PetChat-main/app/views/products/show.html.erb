@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @product.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @product.description %>
+</p>
+
+<p>
+  <strong>Stock:</strong>
+  <%= @product.stock %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @product.price %>
+</p>
+
+<p>
+  <strong>Sku:</strong>
+  <%= @product.sku %>
+</p>
+
+<div class="row">
+  <div class="small-2 large-2 columns">
+    <%= imdb_style_rating_for @product, current_user%>
+  </div>
+  <br>
+  <div class="small-2 large-4 columns">
+    <% if current_user %>
+      Visual Effects: <%= rating_for @product, "visual_effects" %>
+      <br>
+      Original Score: <%= rating_for @product, "original_score" %>
+      <br>
+      Director: <%= rating_for @product, "original_score" %>
+      <br>
+      Custome Design: <%= rating_for @product, "custome_design" %>
+    <% end %>
+  </div>
+</div>
+
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>

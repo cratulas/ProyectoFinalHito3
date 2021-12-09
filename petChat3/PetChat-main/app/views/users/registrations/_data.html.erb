@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= current_user.email %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%=current_user.username %>
+</p>
+<%= link_to 'Edit', edit_user_registration_path, class: "btn btn-primary",  remote: true %>
+<%= link_to 'Show', root_path %> |
+<%= link_to 'Back', root_path %>
