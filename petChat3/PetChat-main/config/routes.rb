@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'users/edit'
-  get 'users/update'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
