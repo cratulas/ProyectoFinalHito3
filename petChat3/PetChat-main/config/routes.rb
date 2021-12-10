@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   
   resources :products
 
-  resource :cart, only: [:show, :update] do
+  resource :cart, only: [:show, :update, :destroy] do
     member do
       post :pay_with_paypal
       get :process_paypal_payment

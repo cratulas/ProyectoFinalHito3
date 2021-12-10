@@ -12,6 +12,15 @@ class CartsController < ApplicationController
     @order = current_order
   end
 
+  def destroy
+    current_order.destroy
+    respond_to do |format|
+      format.html { redirect_to home_indexUser_path, notice: "El carrito se ha vaciado" }
+      format.json { head :no_content }
+    end
+  end
+
+
   def pay_with_paypal
     order = Order.find(params[:cart][:order_id])
   
@@ -75,9 +84,9 @@ class CartsController < ApplicationController
         order.save!
         payment.save!
       end
-      redirect_to root_url, notice: 'El pago se realizo correctamente'
+      redirect_to home_indexUser_path, notice: 'El pago se realizo correctamente'
     else
-      redirect_to root_url, notice: 'Tuvimos problemas al realizar el pago'
+      redirect_to home_indexUser_path, notice: 'Tuvimos problemas al realizar el pago'
     end
 end
 end

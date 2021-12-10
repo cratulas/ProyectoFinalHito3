@@ -20,8 +20,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
 
     respond_to do |format|
-      format.html
-      format.js
+      format.js {render nothing: true} 
+      format.html { redirect_to @post, notice: "Post was successfully updated." }
     end
   end
 
