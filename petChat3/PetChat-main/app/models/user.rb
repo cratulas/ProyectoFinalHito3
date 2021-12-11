@@ -8,5 +8,5 @@ class User < ApplicationRecord
   has_one_attached :photo
   validates :photo, presence: true, blob: {content_type: ["image/jpeg", "image/png"], size_range: 0..5.megabytes}
   has_many :orders
-
+  has_many :posts
 end
