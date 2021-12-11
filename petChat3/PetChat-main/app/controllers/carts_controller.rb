@@ -5,7 +5,7 @@ class CartsController < ApplicationController
     product = params[:cart][:product_id]
     quantity = params[:cart][:quantity]
     current_order.add_product(product, quantity)
-    redirect_to root_url, notice: "Product added successfuly"
+    redirect_to cart_path, notice: "Product added successfuly"
   end
   
   def show
@@ -85,6 +85,8 @@ class CartsController < ApplicationController
         payment.save!
       end
       redirect_to home_indexUser_path, notice: 'El pago se realizo correctamente'
+      current_user.total = current_user.total + 1
+      current_user.save
     else
       redirect_to home_indexUser_path, notice: 'Tuvimos problemas al realizar el pago'
     end
