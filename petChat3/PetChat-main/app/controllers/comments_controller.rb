@@ -2,7 +2,6 @@ class CommentsController < InheritedResources::Base
 
   def create
     @comment = Comment.new(comment_params.merge(user: current_user))
-    
     respond_to do |format|
       if @comment.save
         format.html { redirect_to root_path, notice: "Comment was successfully created." }

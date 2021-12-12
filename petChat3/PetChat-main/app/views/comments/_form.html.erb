@@ -11,16 +11,13 @@
     </div>
   <% end %>
 
+  <%= form.hidden_field :post_id, value: params[:id_post] %>
+
   <div class="field">
     <%= form.label :content %>
     <%= form.text_area :content %>
   </div>
-
-  <div class="field">
-    <%= form.label :post_id %>
-    <%= form.text_field :post_id %>
-  </div>
-
+  
   <div class="actions">
     <%= form.submit %>
   </div>
