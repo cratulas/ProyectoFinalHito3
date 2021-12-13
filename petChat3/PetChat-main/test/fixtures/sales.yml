@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  amount: 1
+  origin: MyString
+  sale_date: 2021-12-12 23:09:24
+
+two:
+  amount: 1
+  origin: MyString
+  sale_date: 2021-12-12 23:09:24

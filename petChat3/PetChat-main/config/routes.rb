@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   get 'home/indexVisit'
   get 'home/indexUser'
   get 'home/market'
-  
+  get 'home/dashboard'
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     passwords: 'users/passwords',
